@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <h1>Tính BMI cho con heo</h1>
+    <input id="mass" type="number" placeholder="Nhập cân nặng con heo (kg)" autofocus></input>
+    <input id="height" type="number" placeholder="Nhập chiều cao con heo (m)"></input>
+    <button type="button" id="get" onclick="getBMI()">Tèn ten</button>
+    <h4 id="result"></h4>
+    <script>
+        function getBMI(){
+            let mass_input = document.getElementById("mass");
+            let height_input = document.getElementById("height");
+            let mass = mass_input.value;
+            let height = height_input.value;
+            let BMI = mass/Math.pow(height,2);
+            
+            if(BMI<18.5){
+                document.getElementById("result").innerHTML = `BMI của con heo là: `+ BMI + `<br></br> Con heo quá ốm`}
+            else{
+                document.getElementById("result").innerHTML = `BMI của con heo là: `+ BMI + `<br></br> Con heo quá mập`
+            }
+        }
+    </script>
+</body>
+
+</html>
